@@ -43,7 +43,7 @@ export class HomePage {
           buttons: ['OK']
         });
         alerta.present();
-
+           
       }
       else {
         const alerta = this.alert.create({

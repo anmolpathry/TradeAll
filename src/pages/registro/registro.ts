@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 
 /**
@@ -23,7 +23,7 @@ export class RegistroPage {
   usuarios = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-    public storage: Storage) {
+    public alert: AlertController, public storage: Storage) {
       this.usuarios = this.navParams.get('usuarios');
   }
 
@@ -41,7 +41,20 @@ export class RegistroPage {
       });
       this.storage.set('usuarios', JSON.stringify(this.usuarios));
       this.navCtrl.pop();
-
+      const alerta = this.alert.create({
+          title: "Congrats",
+          subTitle: "Registro Completo",
+          buttons: ['Ok']
+      })
+      alerta.present();
+    }
+    else{
+      const alerta = this.alert.create({
+         title: "Oops",
+         subTitle: "Contraseña debe ser de 8 caracteres"   ,
+         buttons: ['Ok']
+      })
+      alerta.present();
     }
     
   }
