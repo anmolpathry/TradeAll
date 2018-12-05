@@ -37,8 +37,10 @@ export class RegistroPage {
         correo: this.correo,
         contra: this.contra,
         nombre: this.nombre,
-        telefono: this.telefono
+        telefono: this.telefono,
+        carrito: []
       });
+      
       this.storage.set('usuarios', JSON.stringify(this.usuarios));
       this.navCtrl.pop();
       const alerta = this.alert.create({

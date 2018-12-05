@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { RegistroPage } from '../registro/registro';
 import {Storage} from '@ionic/storage';
+import { ProductosPage } from '../productos/productos';
 
 @Component({
   selector: 'page-home',
@@ -15,7 +16,7 @@ export class HomePage {
  usuarios = [];
 
  registro = RegistroPage;
-
+ Productos= ProductosPage;
 
 
   constructor(public navCtrl: NavController, public alert: AlertController,
@@ -43,7 +44,7 @@ export class HomePage {
           buttons: ['OK']
         });
         alerta.present();
-           
+        this.navCtrl.push(this.Productos, this.usuarios[index]);   
       }
       else {
         const alerta = this.alert.create({
