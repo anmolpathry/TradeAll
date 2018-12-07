@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CarritoPage } from '../carrito/carrito';
 
 /**
  * Generated class for the ProductosPage page.
@@ -14,6 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'productos.html',
 })
 export class ProductosPage {
+
+  Carrito= CarritoPage;
+
+  Productos = [];
 
   productos = [
     {
@@ -35,7 +40,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-10-2",
-      disponibles: 10
+      disponibles: "10"
     },
 
     {
@@ -57,7 +62,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-09-2",
-      disponibles: 5
+      disponibles: "5"
     },
 
     {
@@ -79,7 +84,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-11-2",
-      disponibles: 3
+      disponibles: "3"
     },
 
     {
@@ -101,7 +106,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-10-20",
-      disponibles: 5
+      disponibles: "5"
     },
 
     {
@@ -123,7 +128,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-12-20",
-      disponibles: 8
+      disponibles: "8"
     },
 
     {
@@ -145,7 +150,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-11-20",
-      disponibles: 7
+      disponibles: "7"
     },
 
     {
@@ -167,7 +172,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-10-15",
-      disponibles: 5
+      disponibles: "5"
     },
 
     {
@@ -189,7 +194,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-11-02",
-      disponibles: 1
+      disponibles: "1"
     },
 
     {
@@ -211,7 +216,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-12-20",
-      disponibles: 2
+      disponibles: "2"
     },
 
     {
@@ -233,7 +238,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-11-03",
-      disponibles: 8
+      disponibles: "8"
     },
 
     {
@@ -255,7 +260,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-11-01",
-      disponibles: 5
+      disponibles: "5"
     },
 
     {
@@ -277,7 +282,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-12-20",
-      disponibles: 18
+      disponibles: "18"
     },
 
     {
@@ -299,7 +304,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-11-08",
-      disponibles: 3
+      disponibles: "3"
     },
 
     {
@@ -321,7 +326,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-10-02",
-      disponibles: 8
+      disponibles: "8"
     },
 
     {
@@ -343,7 +348,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-11-12",
-      disponibles: 5
+      disponibles: "5"
     },
 
     {
@@ -365,7 +370,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-11-13",
-      disponibles: 5
+      disponibles: "5"
     },
 
     {
@@ -387,7 +392,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-12-12",
-      disponibles: 3
+      disponibles: "3"
     },
 
     {
@@ -409,7 +414,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-11-12",
-      disponibles: 7
+      disponibles: "7"
     },
 
     {
@@ -431,7 +436,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-11-07",
-      disponibles: 5
+      disponibles: "5"
     },
 
     {
@@ -453,7 +458,7 @@ export class ProductosPage {
         }
       ],
       fecha: "2018-12-12",
-      disponibles: 3
+      disponibles: "3"
     }
   ]
 
@@ -468,8 +473,8 @@ export class ProductosPage {
     console.log('ionViewDidLoad ProductosPage');
   }
 
-  clickInfo(){
-    
+  clickInfo(p){
+    this.navCtrl.push(this.Carrito, {producto: p});
   }
 
 }
