@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CarritoPage } from '../carrito/carrito';
+import { CarroPage } from '../carro/carro';
 
 /**
  * Generated class for the ProductosPage page.
@@ -17,8 +18,10 @@ import { CarritoPage } from '../carrito/carrito';
 export class ProductosPage {
 
   Carrito= CarritoPage;
+  Carro = CarroPage;
 
   Productos = [];
+  carrito = [];
 
   productos = [
     {
@@ -34,7 +37,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Alonso Ibarra",
-        avatar:"",
+        avatar:"../assets/h1.png",
         fecha: "2018-11-30",
         review: "Buen vendedor y productos de calidad"
         }
@@ -56,7 +59,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Raúl Rubio",
-        avatar:"",
+        avatar:"../assets/h2.png",
         fecha: "2018-11-05",
         review: "Muy amable, llegó a tiempo"
         }
@@ -78,7 +81,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Paulina Sánchez",
-        avatar:"",
+        avatar:"../assets/m1.png",
         fecha: "2018-11-05",
         review: "Producto en buenas condiciones"
         }
@@ -100,7 +103,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Verónica Álvarez",
-        avatar:"",
+        avatar:"../assets/m2.png",
         fecha: "2018-10-25",
         review: "Envío gratis y rápido"
         }
@@ -122,7 +125,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Gustavo Aquiles",
-        avatar:"",
+        avatar:"../assets/h3.png",
         fecha: "2018-12-28",
         review: "Buen servicio"
         }
@@ -144,7 +147,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Carlos Ramírez",
-        avatar:"",
+        avatar:"../assets/h4.png",
         fecha: "2018-12-05",
         review: "Super cómodo y lindo"
         }
@@ -166,7 +169,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Armando Jiménez",
-        avatar:"",
+        avatar:"../assets/h5.png",
         fecha: "2018-11-28",
         review: "Ideal para decorar"
         }
@@ -188,7 +191,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Guillermo Romero",
-        avatar:"",
+        avatar:"../assets/h6.png",
         fecha: "2018-11-18",
         review: "Excelente centro de mesa"
         }
@@ -210,7 +213,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Laura Ávalos",
-        avatar:"",
+        avatar:"../assets/m3.png",
         fecha: "2018-12-28",
         review: "Decoración increíble"
         }
@@ -232,7 +235,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Irlanda Quijano ",
-        avatar:"",
+        avatar:"../assets/m4.png",
         fecha: "2018-11-17",
         review: "Muy adaptable a cualquier lugar"
         }
@@ -254,7 +257,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Iván Díaz",
-        avatar:"",
+        avatar:"../assets/h7.png",
         fecha: "2018-11-13",
         review: "Buen disfraz"
         }
@@ -276,7 +279,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Fernando Figueroa",
-        avatar:"",
+        avatar:"../assets/h8.png",
         fecha: "2018-12-28",
         review: "Bueno, pero se le cayeron las flores"
         }
@@ -298,7 +301,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Mario Treviño",
-        avatar:"",
+        avatar:"../assets/h9.png",
         fecha: "2018-11-18",
         review: "Excelent decoración de jardín"
         }
@@ -320,7 +323,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Ricardo Cervantes",
-        avatar:"",
+        avatar:"../assets/h10.png",
         fecha: "2018-10-28",
         review: "Luce mucho de noche"
         }
@@ -342,7 +345,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Rocio Murillo",
-        avatar:"",
+        avatar:"../assets/m1.png",
         fecha: "2018-11-18",
         review: "Se desinfló el primer día"
         }
@@ -364,7 +367,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Javier Gutierrez",
-        avatar:"",
+        avatar:"../assets/h11.png",
         fecha: "2018-11-25",
         review: "Más pequeño que en la foto"
         }
@@ -386,7 +389,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Paulina Najar",
-        avatar:"",
+        avatar:"../assets/m2.png",
         fecha: "2018-12-18",
         review: "Excelente para guardar dulces"
         }
@@ -408,7 +411,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Claudia Montero",
-        avatar:"",
+        avatar:"../assets/m3.png",
         fecha: "2018-11-18",
         review: "Buena ilumincación LED"
         }
@@ -430,7 +433,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Armando Herrera",
-        avatar:"",
+        avatar:"../assets/h12.png",
         fecha: "2018-11-12",
         review: "Se cayó el gorrito"
         }
@@ -452,7 +455,7 @@ export class ProductosPage {
       reviews:[
         {
         username: "Maía Centeno",
-        avatar:"",
+        avatar:"../assets/m3.png",
         fecha: "2018-12-18",
         review: "Completo y perfecto"
         }
@@ -474,7 +477,12 @@ export class ProductosPage {
   }
 
   clickInfo(p){
-    this.navCtrl.push(this.Carrito, {producto: p});
+    this.navCtrl.push(this.Carrito, {producto: p, carrito:this.carrito});
   }
+
+  clickCarro(){
+    this.navCtrl.push(this.Carro, {carrito:this.carrito});
+  }
+
 
 }

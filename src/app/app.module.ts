@@ -10,6 +10,7 @@ import { RegistroPage } from '../pages/registro/registro';
 import { IonicStorageModule } from '@ionic/storage';
 import { ProductosPage } from '../pages/productos/productos';
 import { CarritoPage } from '../pages/carrito/carrito';
+import { CarroPage } from '../pages/carro/carro';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CarritoPage } from '../pages/carrito/carrito';
     HomePage,
     RegistroPage,
     ProductosPage,
-    CarritoPage
+    CarritoPage,
+    CarroPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { CarritoPage } from '../pages/carrito/carrito';
     HomePage,
     RegistroPage,
     ProductosPage,
-    CarritoPage
+    CarritoPage,
+    CarroPage
   ],
   providers: [
     StatusBar,

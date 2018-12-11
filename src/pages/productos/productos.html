@@ -5,12 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
+    <ion-toolbar>
+      <ion-buttons end>
+        <button (click) = "clickCarro()" ion-button icon-only color="royal">
+          <ion-icon name="cart"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Productos</ion-title>
 
-  <ion-navbar>
-    <ion-title>Productos</ion-title>
-  </ion-navbar>
-
-</ion-header>
+    </ion-toolbar>
+  </ion-header>
 
 
 <ion-content padding>
