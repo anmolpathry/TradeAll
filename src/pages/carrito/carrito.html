@@ -7,15 +7,17 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{producto.nombre}}</ion-title>
+    <ion-title>
+      <h2  style = "color: #F08080">{{producto.nombre}}</h2>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding style= "background-color: #E9967A">
 
-    <ion-card>
+    <ion-card  style = "background-color: #F08080">
         <ion-row>
        <ion-col>
          <img [src]= "producto.imagen" >
@@ -32,9 +34,7 @@
            </ion-row> 
 
            <ion-row>
-               <p *ngFor = "let v of producto.vendededor.valoracion"> 
-                 {{v}}
-                </p>
+             <ion-icon name= "star" *ngFor= "let s of producto.vendededor.valoracion"></ion-icon>
            </ion-row>
 
            <br> 
@@ -46,11 +46,11 @@
       </ion-row>
       </ion-card>  
 
-      <ion-card  *ngFor = "let r of producto.reviews"> 
+      <ion-card  *ngFor = "let r of producto.reviews" style = "background-color: LEMONCHIFFON"> 
 
       <ion-row >
         
-          <ion-item>
+          <ion-item style = "background-color: LEMONCHIFFON">
             <ion-avatar item-start>
               <img [src] = "r.avatar">
             </ion-avatar>
